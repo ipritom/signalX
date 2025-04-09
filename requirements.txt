@@ -1,3 +1,3 @@
-flet==0.27.6
-fletFlow==0.1.5
+flet==0.24
+fletFlow @ git+https://github.com/ipritom/fletFlow
 paho_mqtt==2.1.0

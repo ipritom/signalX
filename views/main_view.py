@@ -20,6 +20,9 @@ class MainView(fletFlowView):
 
         self.command_btn2 = ft.ElevatedButton("CMD2", on_click=self.on_click_command_btn, data="CMD2")
         self.command_text2 = ft.TextField(label="Command", width=512, data="CMD2")
+
+        self.command_btn3 = ft.ElevatedButton("CMD3", on_click=self.on_click_command_btn, data="CMD3")
+        self.command_text3 = ft.TextField(label="Command", width=512, data="CMD3")
         # self.test_btn = ft.CupertinoFilledButton("Test Button")
 
     # page.add(container)
@@ -27,9 +30,10 @@ class MainView(fletFlowView):
     def layout(self):
         lout = ft.Row([
             ft.Container(content=ft.Column(
-                            [   
+                            [   ft.Row([ft.Text("SignalX", size=30, weight=ft.FontWeight.BOLD, color=ft.colors.WHITE, text_align=ft.TextAlign.CENTER)]),
                                 ft.Row([self.command_btn1, self.command_text1]),
-                                ft.Row([self.command_btn2, self.command_text2])
+                                ft.Row([self.command_btn2, self.command_text2]),
+                                ft.Row([self.command_btn3, self.command_text3]),
                             ],
                         width=500),
                         padding=200,
@@ -50,6 +54,9 @@ class MainView(fletFlowView):
         
         elif data=="CMD2":
             mqtt_publish_msg(MQTT_BASE_TOPIC, self.command_text2.value)
+        
+        elif data=="CMD3":
+            mqtt_publish_msg(MQTT_BASE_TOPIC, self.command_text3.value)
 
         self.page.add(ft.Text("Button Clicked!"))
         self.page.update()

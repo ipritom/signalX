@@ -1,7 +1,7 @@
 import paho.mqtt.client as mqtt
 
 # MQTT Broker details
-BROKER = "192.168.180.74"  # Replace with your broker address
+BROKER = "192.168.118.192"  # Replace with your broker address
 PORT = 1883  # Default MQTT port
 USERNAME = "admin"
 PASSWORD = "admin"  
@@ -13,7 +13,7 @@ MESSAGE = "Hello, MQTT!"
 client = mqtt.Client()
 
 # Set username and password 
-client.username_pw_set(USERNAME, PASSWORD)
+# client.username_pw_set(USERNAME, PASSWORD)
 
 # Connect to the broker
 client.connect(BROKER, PORT, 60)
