@@ -1,5 +1,5 @@
 from crc import Calculator, Crc16
-from protocol import Protocol
+from dump.protocol import Protocol
 
 proto = Protocol()
 
